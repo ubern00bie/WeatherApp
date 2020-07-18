@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+      <!-- use moment.js to add date to "city" div-->
+</head>
+<body>
+    <!-- Retrieved data will be dumped here -->
+    <header id="header">
+      <h1>Weather Dashboard</h1>
+    </header>
+    <aside>
+      <form>
+        <h2>Search for a City:</h2>
+        <input id="userCity"><button type="button" class="btn btn-outline-info" ><img id="searchBtn" src="images/Search-button.png" alt="Search Icon"></button>
+        <div id="buttonList"></div>
+      </form>
+      <div class="cityList">
+        <!-- buttons go here -->
+      </div>
+    </aside>
+    <main class="currentWeather">
+        <div class="city"></div>
+        <div class="coord"></div>
+        <div class="weatherIcon"></div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+        <div class="temp"></div>
+        <div class="UV"></div>
+    </main>
+    
+    <table><!-- holds cards for 5 day forcast -->
+      <h5>5-Day Forecast:</h5>
+      <tr>
+        <th>
+          <div class="card" id="day1">
+            <div class="card-body">
+              <h5 class="card-title date0">Date</h5>
+              <p class="img0"></p>
+              <img class="img0" src="" alt="weather icon">
+              <p class="card-text temp0">Temp</p>
+              <p class="card-text hum0">Humidity</p>
+            </div>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="card" id="day2">
+            <div class="card-body">
+              <h5 class="card-title date1">Date</h5>
+              <p class="img1"></p>
+              <img class="img1" src="" alt="weather icon">
+              <p class="card-text temp1">Temp</p>
+              <p class="card-text hum1">Humidity</p>
+            </div>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="card" id="day3">
+            <div class="card-body">
+              <h5 class="card-title date2">Date</h5>
+              <p class="img2"></p>
+              <img class="img2" src="" alt="weather icon">
+              <p class="card-text temp2">Temp</p>
+              <p class="card-text hum2">Humidity</p>
+            </div>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="card" id="day4">
+            <div class="card-body">
+              <h5 class="card-title date3">Date</h5>
+              <p class="img3"></p>
+              <img class="img3" src="" alt="weather icon">
+              <p class="card-text temp3">Temp</p>
+              <p class="card-text hum3">Humidity</p>
+            </div>
+          </div>
+        </th>
+      </tr>
+      <tr>
+        <th>
+          <div class="card" id="day5">
+            <div class="card-body">
+              <h5 class="card-title date4">Date</h5>
+              <p class="img4"></p>
+              <img class="img4" src="" alt="weather icon">
+              <p class="card-text temp4">Temp</p>
+              <p class="card-text hum4">Humidity</p>
+            </div>
+          </div>
+        </th>
+      </tr>
+    </table>
+    
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="script.js"></script>
+ 
+</body>
+</html>
+
+<!-- WHEN I search for a city
+THEN I am presented with current and future conditions for that city and that city is added to the search history
+WHEN I view current weather conditions for that city
+THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+WHEN I view the UV index
+THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+WHEN I view future weather conditions for that city
+THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+WHEN I click on a city in the search history
+THEN I am again presented with current and future conditions for that city
+WHEN I open the weather dashboard
+THEN I am presented with the last searched city forecast -->
