@@ -1,14 +1,13 @@
 weatherApp();
 function weatherApp(){
-// var cities = ["Kansas City", "San Diego", "Honolulu", "St. Louis"];
 
 var cities = (JSON.parse(localStorage.getItem("weather")) || ["Kansas City", "San Diego", "Honolulu", "St. Louis"])
-
 var APIKey = "83df096b794f8f9c6911f7ddaae5235f";
 var userCity = $('#userCity').val();
+
 if (userCity === "") {
     var userCity = 'Kansas City'
-    $('#userCity').attr('placeholder', 'City,State')
+    $('#userCity').attr('placeholder', 'Enter City Name')
     var queryCurrent = "https://api.openweathermap.org/data/2.5/weather?q="+ userCity +"&appid=" + APIKey;
     var query5day = "https://api.openweathermap.org/data/2.5/forecast?q="+ userCity +"&appid=" + APIKey;
 }
@@ -60,7 +59,7 @@ $.get(queryCurrent).then(function(response) {
             $('.UV').css('');
         }
     })
-  $('.city').html('<h1>' + response.name +",  ("+ currentDay +")"+'</h1>');
+  $('.city').html('<h1>' + response.name +",  ("+ currentDay +")"+'</h1>' + '<img src=images/' + response.weather[0].icon +'.png>');
   $('.coord').html("(Latitude: " + lat + "  Longitude: " + lon +")");
   $('.wind').html("Wind Speed: "+ response.wind.speed + ' mph');
   
@@ -98,16 +97,4 @@ $("#searchBtn").on("click", function (event) {
     }
 });
 }
-  // Create CODE HERE to Log the queryURL
-//   var newvar = $.get(queryCurrent);
- //weather dashboard
-            //presented with last searched city
 
-  //search history
-            //current & future weather conditions
- 
-  // Create CODE HERE to log the resulting object
-  //future conditions
-            //5 day forcast, date, icon for weather cond, temp & humidity
-    //current weather - city name, the date, icon representation of weather conditions, temperature, humidity, wind speed, UV index
-            //UV index - color that indicates favorable, moderate, or severe
