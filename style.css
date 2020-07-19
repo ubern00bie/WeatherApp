@@ -10,5 +10,5 @@ text-align: center;
     border-radius: 5px;
 }
 table {
-    float: left;
+    display:inline-block;
 }

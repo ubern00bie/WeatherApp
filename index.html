@@ -14,16 +14,17 @@
     <header id="header">
       <h1>Weather Dashboard</h1>
     </header>
-    <aside>
-      <form>
+    <div class = "row">
+    <aside class="col col-md-3">
+      <div>
         <h2>Search for a City:</h2>
-        <input id="userCity"><button type="button" class="btn btn-outline-info" ><img id="searchBtn" src="images/Search-button.png" alt="Search Icon"></button>
-        <div id="buttonList"></div>
-      </form>
+        <input id ="userCity"></textarea><button type="button" class="btn btn-outline-info" ><img id="searchBtn" src="images/Search-button.png" alt="Search Icon"></button>
+      </div>
       <div class="cityList">
         <!-- buttons go here -->
       </div>
     </aside>
+    <div class = "col col-md-9">
     <main class="currentWeather">
         <div class="city"></div>
         <div class="coord"></div>
@@ -33,11 +34,12 @@
         <div class="temp"></div>
         <div class="UV"></div>
     </main>
-    
+
     <table><!-- holds cards for 5 day forcast -->
       <h5>5-Day Forecast:</h5>
-      <tr>
-        <th>
+      <!-- <tr>
+        <th> -->
+          <div class = "card-deck">
           <div class="card" id="day1">
             <div class="card-body">
               <h5 class="card-title date0">Date</h5>
@@ -47,10 +49,10 @@
               <p class="card-text hum0">Humidity</p>
             </div>
           </div>
-        </th>
+        <!-- </th>
       </tr>
       <tr>
-        <th>
+        <th> -->
           <div class="card" id="day2">
             <div class="card-body">
               <h5 class="card-title date1">Date</h5>
@@ -60,10 +62,10 @@
               <p class="card-text hum1">Humidity</p>
             </div>
           </div>
-        </th>
+        <!-- </th>
       </tr>
       <tr>
-        <th>
+        <th> -->
           <div class="card" id="day3">
             <div class="card-body">
               <h5 class="card-title date2">Date</h5>
@@ -73,10 +75,10 @@
               <p class="card-text hum2">Humidity</p>
             </div>
           </div>
-        </th>
+        <!-- </th>
       </tr>
       <tr>
-        <th>
+        <th> -->
           <div class="card" id="day4">
             <div class="card-body">
               <h5 class="card-title date3">Date</h5>
@@ -86,10 +88,10 @@
               <p class="card-text hum3">Humidity</p>
             </div>
           </div>
-        </th>
+        <!-- </th>
       </tr>
       <tr>
-        <th>
+        <th> -->
           <div class="card" id="day5">
             <div class="card-body">
               <h5 class="card-title date4">Date</h5>
@@ -99,10 +101,13 @@
               <p class="card-text hum4">Humidity</p>
             </div>
           </div>
-        </th>
-      </tr>
+        </div>
+        <!-- </th>
+      </tr> -->
     </table>
-    
+  </div>
+  </div>
+
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="script.js"></script>
  
