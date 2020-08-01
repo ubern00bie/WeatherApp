@@ -40,7 +40,7 @@ $.get(queryCurrent).then(function(response) {
     var lat = (response.coord.lat);
     var lon = (response.coord.lon);
 
-    var queryUV = "http://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey +"&lat="+ lat+"&lon=" + lon;
+    var queryUV = "https://api.openweathermap.org/data/2.5/uvi?appid="+ APIKey +"&lat="+ lat+"&lon=" + lon;
         $.get(queryUV).then(function(response) {
 
             $('.UV').html("UV Index: " + response.value)
