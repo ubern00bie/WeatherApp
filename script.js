@@ -66,10 +66,11 @@ $.get(queryCurrent).then(function(response) {
                 $('.UV').css('background-color','none');
             }
         })
-  $('.city').html('<h1>' + response.name +",  ("+ currentDay +")"+'</h1>' + '<img src=images/' + response.weather[0].icon +'.png>');
-  $('.coord').html("(Latitude: " + lat + "  Longitude: " + lon +")");
-  $('.wind').html("Wind Speed: "+ response.wind.speed + ' mph');
-  
+    //displays weather data and icons for weather status
+        $('.city').html('<h1>' + response.name +",  ("+ currentDay +")"+'</h1>' + '<img src=images/' + response.weather[0].icon +'.png>');
+        $('.coord').html("(Latitude: " + lat + "  Longitude: " + lon +")");
+        $('.wind').html("Wind Speed: "+ response.wind.speed + ' mph');
+  //temp conversion from Kelvin
   var tempF = ((response.main.temp -273.15)* 1.80 + 32).toFixed(2);
   $('.temp').html("Temperature: " + tempF + "&#176F")
   $('.humidity').html("Humidity: "+ response.main.humidity +"%")
@@ -88,6 +89,7 @@ $.get(query5day).then(function(response) {
     }
 })
 
+    // set click event to check if input is empty, if not, runs the "weatherApp" function again with new user entry. 
 $("#searchBtn").on("click", function (event) {
     event.preventDefault();
     userCity = $('#userCity').val()
@@ -95,12 +97,11 @@ $("#searchBtn").on("click", function (event) {
     if (userCity === "") {
         alert("Please enter a city name")
     }
-    else{
+    else{ // adds user's entry to array of past entries and removes duplicate entries
     var userCity = $('#userCity').val();
     cities.push(userCity);
     let citiesFilt = [...new Set(cities)];
     localStorage.setItem("weather", JSON.stringify(citiesFilt))
-    console.log("cities:" + citiesFilt)
     }
 });
 }
